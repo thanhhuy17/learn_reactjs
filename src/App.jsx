@@ -10,7 +10,7 @@ function App() {
   const student = {
     name: "Easy FrontEnd By H",
   };
-  const colorList = ["red", "green", "blue", "orange"];
+  const colorList = ["red", "green", "blue", "orange", "black"];
 
   return (
     <div className="App">
