@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+// import React from "react";
+// import PropTypes from "prop-types";
 import "./styles.scss";
 
 Header.propTypes = {};
 
-function Header(props) {
-  return <div></div>;
+function Header() {
+  return <div>Header</div>;
 }
 
 export default Header;
