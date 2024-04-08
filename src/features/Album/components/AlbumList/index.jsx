@@ -1,6 +1,6 @@
-import React from "react";
 import PropTypes from "prop-types";
 import Album from "../Album";
+import "./style.scss"; // Import your SCSS file
 
 AlbumList.propTypes = {
   albumList: PropTypes.array.isRequired,
