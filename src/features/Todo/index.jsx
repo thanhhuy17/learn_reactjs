@@ -1,8 +1,8 @@
+import { useState } from "react";
 import TodoList from "./components/TodoList";
 
-TodoFutures.propTypes = {};
 function TodoFutures() {
-  const TodoListH = [
+  const initTodoListH = [
     {
       id: 1,
       title: "Eat",
@@ -19,10 +19,27 @@ function TodoFutures() {
       status: "new",
     },
   ];
+
+  const [todoList, setodoList] = useState(initTodoListH);
+
+  const handleTodoClick = (todo, inx) => {
+    //clone curent array to the new one
+    const newTodoList = [...todoList];
+    console.log(todo, inx);
+    //Toggle State
+    newTodoList[inx] = {
+      ...newTodoList[inx],
+      status: newTodoList[inx].status === "new" ? "completed" : "new",
+    };
+    // newTodoList[inx] = newTodo;
+    //Update todolist
+    setodoList(newTodoList);
+  };
+
   return (
     <div>
       <h3>Todo List Huy</h3>
-      <TodoList todoList={TodoListH} />
+      <TodoList todoList={todoList} onTodoClick={handleTodoClick} />
     </div>
   );
 }
