@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TodoList from "./components/TodoList";
+import "./styles.scss";
 
 function TodoFutures() {
   const initTodoListH = [
@@ -21,6 +22,8 @@ function TodoFutures() {
   ];
 
   const [todoList, setodoList] = useState(initTodoListH);
+  // Set filler
+  const [fillteredStatus, setFillteredStatus] = useState("all");
 
   const handleTodoClick = (todo, inx) => {
     //clone curent array to the new one
@@ -36,10 +39,37 @@ function TodoFutures() {
     setodoList(newTodoList);
   };
 
+  const handleShowAllClick = () => {
+    setFillteredStatus("all");
+  };
+  const handleShowCompletedClick = () => {
+    setFillteredStatus("completed");
+  };
+  const handleShowNewClick = () => {
+    setFillteredStatus("new");
+  };
+
+  const renderedTodoList = todoList.filter(
+    (todo) => fillteredStatus === "all" || fillteredStatus === todo.status,
+  );
+  console.log(renderedTodoList);
+
   return (
     <div>
       <h3>Todo List Huy</h3>
-      <TodoList todoList={todoList} onTodoClick={handleTodoClick} />
+      <TodoList todoList={renderedTodoList} onTodoClick={handleTodoClick} />
+      {/* Thêm 3 Button */}
+      <div>
+        <button className="btnAll" onClick={handleShowAllClick}>
+          Show All
+        </button>
+        <button className="btnCom" onClick={handleShowCompletedClick}>
+          Show Completed
+        </button>
+        <button className="btnNew" onClick={handleShowNewClick}>
+          Show New
+        </button>
+      </div>
     </div>
   );
 }

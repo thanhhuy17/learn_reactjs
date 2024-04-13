@@ -8,3 +8,8 @@
         font-style: italic;
     }
 }
+.todo-list{
+    & > .btnAll{
+        font-display: #0d70c7;
+    }
+}
