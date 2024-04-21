@@ -1,4 +1,4 @@
-import { Link, NavLink, Route, Routes } from "react-router-dom";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import TodoFutures from "./features/Todo";
 import AlbumFeature from "./features/Album";
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       HUY NGUYEN
       <p>
-        <Link to="/http://localhost:5173}"> Chuyển đến Trang chủ </Link>
+        <Link to="/http://localhost:5173}"> Home Page</Link>
       </p>
       <p>
         <Link to="/todo"> Chuyển đến Todo </Link>
@@ -18,14 +18,17 @@ function App() {
         <Link to="/album"> Chuyển đến Album </Link>
       </p>
       {/* NAVLink */}
-      <NavLink to="/todo" activeClassName="active-todo">
+      {/* <NavLink to="/todo" activeClassName="active-todo">
         ActiveToDoNavLink
       </NavLink>
-      <NavLink to="/Album">ActiveAlbumNavLink</NavLink>
+      <p>
+        <NavLink to="/album">ActiveAlbumNavLink</NavLink>
+      </p> */}
       <Routes>
-        {/* <Route path="/MainPage" Component={"/http://localhost:5173}"} /> */}
+        {/* <Route path="/" Component={TodoFutures} /> */}
         <Route path="/todo" Component={TodoFutures} />
         <Route path="/album" Component={AlbumFeature} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );
