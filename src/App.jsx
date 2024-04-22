@@ -26,7 +26,7 @@ function App() {
       </p> */}
       <Routes>
         {/* <Route path="/" Component={TodoFutures} /> */}
-        <Route path="/todo" Component={TodoFutures} />
+        <Route path="/todo/*" Component={TodoFutures} />
         <Route path="/album" Component={AlbumFeature} />
         <Route path="/home" element={<Navigate to="/" replace />} />
       </Routes>

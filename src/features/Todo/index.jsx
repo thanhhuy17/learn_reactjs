@@ -12,7 +12,7 @@ function TodoFutures() {
         <Link to="/">Detail Page</Link>
       </nav> */}
       <Routes>
-        <Route path="/list" element={<ListPage />}></Route>
+        <Route path="/" element={<ListPage />}></Route>
         <Route path="/todo/:todoId" element={<DetailPage />}></Route>
       </Routes>
     </div>
