@@ -15,7 +15,7 @@ function App() {
         <Link to="/todo"> Chuyển đến Todo </Link>
       </p>
       <p>
-        <Link to="/album"> Chuyển đến Album </Link>
+        <Link to="/album"> Chuyển đến Album HUY </Link>
       </p>
       {/* NAVLink */}
       {/* <NavLink to="/todo" activeClassName="active-todo">
